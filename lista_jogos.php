@@ -2,11 +2,9 @@
 include 'header.php';
 include 'banco.php';
 
-// Verifica se o parâmetro 'excluir_nome' foi enviado via GET
 if (isset($_GET['excluir_nome'])) {
     $nomeParaExcluir = $_GET['excluir_nome'];
 
-    // Chama a função de exclusão pelo nome
     if (excluirJogo($nomeParaExcluir)) {
         echo "<div class='alert alert-success text-center'>O jogo <strong>$nomeParaExcluir</strong> foi excluído com sucesso!</div>";
     } else {
@@ -32,15 +30,14 @@ if ($search) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         .highlight {
-            background-color: yellow; /* Cor de fundo para destacar */
-            font-weight: bold; /* Deixa o texto mais grosso */
+            background-color: yellow;
+            font-weight: bold;
         }
     </style>
 </head>
 
 <body>
     <div class="container text-right">
-        <!-- Formulário de Pesquisa -->
         <form method="GET" action="lista_jogos.php">
             <div class="form-group mt-4">
                 <input type="text" class="form-control" name="search" placeholder="Pesquisar jogo" value="<?php echo htmlspecialchars($search); ?>">

@@ -9,9 +9,11 @@ $categoria = $_POST["categoria"];
 ;
 
 if (cadastrarJogos($nome, $plataforma, $preco, $categoria)) {
-    echo '<h1>Jogo cadastrado com sucesso</h1>';
+    header('Location: lista_jogos.php');
+    exit();
 } else {
     echo 'Erro no cadastro do Jogo!';
 }
+
 include 'footer.php';
 ?>

@@ -22,7 +22,7 @@ $categorias = listar_categorias();
             </div>
             <div class="form-group">
                 <label for="preco">Preço:</label>
-                <input type="text" class="form-control" id="preco" name="preco" required>
+                <input type="number" class="form-control" id="preco" name="preco" step="0.01" required>
             </div>
             <div class="form-group">
                 <label for="categoria">Escolha o tipo:</label>
